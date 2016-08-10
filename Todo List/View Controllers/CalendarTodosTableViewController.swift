@@ -16,10 +16,10 @@ class CalendarTodosTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "TitlebarBG"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         for (key, todos) in todoDict {
             if self.key == key {
                 self.todos = todos
@@ -56,7 +56,7 @@ class CalendarTodosTableViewController: UITableViewController {
         
         // Configure the cell...
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "MM-dd-yyyy"
         let dateString = dateFormatter.stringFromDate((self.todos as! [Todo])[indexPath.row].dueDate!)
         cell.textLabel?.text = (self.todos as! [Todo])[indexPath.row].content
         

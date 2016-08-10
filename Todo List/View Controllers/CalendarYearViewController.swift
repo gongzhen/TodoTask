@@ -23,6 +23,10 @@ class CalendarYearViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "TitlebarBG"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         calendarYearViewMonthDataSource = CalendarYearViewMonthDataSource()
         calendarYearViewMonthDataSource.initTodos()
         

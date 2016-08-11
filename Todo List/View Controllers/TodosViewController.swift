@@ -107,9 +107,7 @@ extension TodosViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todoContentCell", forIndexPath: indexPath) as! TodoContentCell
         let todo = fetchedRequestsController.objectAtIndexPath(indexPath) as! Todo
-        // cell.content.text = todo.content
         cell.config(todo)
-        // @todo
         // http://stackoverflow.com/questions/11540292/weird-behaviour-with-fetchedresultscontroller-in-numberofrowsinsection
         cell.delegate = self
         return cell
@@ -191,9 +189,6 @@ extension TodosViewController: NSFetchedResultsControllerDelegate {
             error = error1
             print("fetch error: \(error?.localizedDescription)")
         }
-        
-        // testing purpose
-        // test()
     }
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {

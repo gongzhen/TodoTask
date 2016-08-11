@@ -17,30 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lanuch" translatesAutoresizingMaskIntoConstraints="NO" id="5i1-EY-FjJ">
-                                <rect key="frame" x="238" y="200" width="124" height="123"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todo Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBr-mV-K8a">
+                                <rect key="frame" x="150" y="277" width="300" height="94"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="124" id="pKY-Nx-PMT"/>
-                                    <constraint firstAttribute="height" constant="123" id="s6I-Fx-tAr"/>
+                                    <constraint firstAttribute="width" constant="300" id="CEa-oZ-n8O"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Do It" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cla-0S-Mfl">
-                                <rect key="frame" x="238" y="364" width="124" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="U7m-5W-W4j"/>
-                                    <constraint firstAttribute="width" constant="124" id="wGQ-IM-zKx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" red="0.28107914412653273" green="0.35852361069238797" blue="0.42197516025641035" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.97152019857053884" blue="0.99638070976010107" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="5i1-EY-FjJ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="180" id="IOR-97-Bmu"/>
-                            <constraint firstItem="cla-0S-Mfl" firstAttribute="top" secondItem="5i1-EY-FjJ" secondAttribute="bottom" constant="41" id="OLP-sC-3Z8"/>
-                            <constraint firstItem="cla-0S-Mfl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QyM-ae-H9W"/>
-                            <constraint firstItem="5i1-EY-FjJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ib1-Xf-Lbd"/>
+                            <constraint firstItem="jBr-mV-K8a" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VT5-rb-E8a"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="jBr-mV-K8a" secondAttribute="bottom" constant="229" id="egb-Vf-Xvw"/>
+                            <constraint firstItem="jBr-mV-K8a" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="257" id="vBV-fa-vNa"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -49,7 +39,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Lanuch" width="76" height="76"/>
-    </resources>
 </document>

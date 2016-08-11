@@ -91,6 +91,17 @@ class TodoRepository{
         todo4.category = 1  // TODY
         todo4.todolist = defaultList
         
+        let todo5 = NSEntityDescription.insertNewObjectForEntityForName("Todo", inManagedObjectContext: sharedContext) as! Todo
+        todo5.content = "See your tasks from calendar."
+        todo5.completed = false
+        todo5.dueDate = DateUtils.today()
+        todo5.completedTime = DateUtils.today()
+        todo5.deletedFlag = 0
+        todo5.order = 0
+        todo5.updatedTime = DateUtils.today()
+        todo5.category = 1  // TODY
+        todo5.todolist = defaultList
+        
         // save to core data
         // Fixed bug related to the sharedInsace.
         CoreDataStackManager.sharedInstance().saveContext()

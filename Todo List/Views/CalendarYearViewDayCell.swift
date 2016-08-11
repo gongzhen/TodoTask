@@ -12,21 +12,7 @@ class CalendarYearViewDayCell: UICollectionViewCell {
 
     @IBOutlet var label: UILabel!
     @IBOutlet var backView:UIView!
-    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("NSCoding not supported")
-//    }
-//    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        // self.label.frame: (0.0, 0.0, 46.0, 16.0)
-//        self.label = UILabel(frame: CGRect.null)
-//        self.label.textAlignment = .Center
-//
-//        self.backgroundColor = UIColor.blueColor()
-//        self.addSubview(self.label)
-//    }
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

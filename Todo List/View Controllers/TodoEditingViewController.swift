@@ -35,13 +35,17 @@ class TodoEditingViewController: UIViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! TodoContentEditingCell
-        guard cell.content.text != "" else {
-            // text == ""
+        guard cell.content.text != ""  else {            
+            if identifier == Constants.CancelUnwindSegueID {
+                return true
+            }
+            // text == "" && identifier != cancel.
             let alert = UIAlertController(title: "Empty Content", message: "Please input the text", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
             return false
         }
+        //identifier
         return true
     }
     

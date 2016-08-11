@@ -20,10 +20,15 @@ class CalendarMonthViewDayCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
     }
     
     func hideDate() {
         dayLabel.hidden = true
+        dotView.hidden = true
+    }
+    
+    func hideDotView() {
         dotView.hidden = true
     }
     

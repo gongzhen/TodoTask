@@ -48,9 +48,9 @@
 		064FD06D1D5969510048D72D /* CalendarMonthViewDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064FD06C1D5969510048D72D /* CalendarMonthViewDayCell.xib */; };
 		064FD06F1D5985D50048D72D /* CalendarMonthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064FD06E1D5985D50048D72D /* CalendarMonthViewController.xib */; };
 		064FD0721D598CC80048D72D /* CalendarMonthViewHeaderYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FD0701D598CC80048D72D /* CalendarMonthViewHeaderYearView.swift */; };
-		064FD0731D598CC80048D72D /* CalendarMonthViewHeaderYearView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064FD0711D598CC80048D72D /* CalendarMonthViewHeaderYearView.xib */; };
 		064FD0781D5AD8A30048D72D /* CalendarTodosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FD0761D5AD8A30048D72D /* CalendarTodosTableViewController.swift */; };
 		064FD0791D5AD8A30048D72D /* CalendarTodosTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064FD0771D5AD8A30048D72D /* CalendarTodosTableViewController.xib */; };
+		064FD07B1D5C1A330048D72D /* CalendarMonthViewHeaderYearView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064FD07A1D5C1A320048D72D /* CalendarMonthViewHeaderYearView.xib */; };
 		06A31DA51D57D9A0002BA41A /* CalendarMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A31DA41D57D9A0002BA41A /* CalendarMonthViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -119,9 +119,9 @@
 		064FD06C1D5969510048D72D /* CalendarMonthViewDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarMonthViewDayCell.xib; sourceTree = "<group>"; };
 		064FD06E1D5985D50048D72D /* CalendarMonthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarMonthViewController.xib; sourceTree = "<group>"; };
 		064FD0701D598CC80048D72D /* CalendarMonthViewHeaderYearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarMonthViewHeaderYearView.swift; sourceTree = "<group>"; };
-		064FD0711D598CC80048D72D /* CalendarMonthViewHeaderYearView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarMonthViewHeaderYearView.xib; sourceTree = "<group>"; };
 		064FD0761D5AD8A30048D72D /* CalendarTodosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTodosTableViewController.swift; sourceTree = "<group>"; };
 		064FD0771D5AD8A30048D72D /* CalendarTodosTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarTodosTableViewController.xib; sourceTree = "<group>"; };
+		064FD07A1D5C1A320048D72D /* CalendarMonthViewHeaderYearView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarMonthViewHeaderYearView.xib; sourceTree = "<group>"; };
 		06A31DA41D57D9A0002BA41A /* CalendarMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarMonthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,7 +254,7 @@
 				064FD06A1D59684B0048D72D /* CalendarMonthViewDayCell.swift */,
 				064FD06C1D5969510048D72D /* CalendarMonthViewDayCell.xib */,
 				064FD0701D598CC80048D72D /* CalendarMonthViewHeaderYearView.swift */,
-				064FD0711D598CC80048D72D /* CalendarMonthViewHeaderYearView.xib */,
+				064FD07A1D5C1A320048D72D /* CalendarMonthViewHeaderYearView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,11 +390,11 @@
 				061AFA161D53A99F0023E35C /* CalendarYearViewMonthCell.xib in Resources */,
 				061AF9461D4936FF0023E35C /* LaunchScreen.storyboard in Resources */,
 				061AF9DE1D4D33650023E35C /* ItemSelectionCell.xib in Resources */,
-				064FD0731D598CC80048D72D /* CalendarMonthViewHeaderYearView.xib in Resources */,
 				061AF9431D4936FF0023E35C /* Assets.xcassets in Resources */,
 				061AF9411D4936FF0023E35C /* Main.storyboard in Resources */,
 				064FD06D1D5969510048D72D /* CalendarMonthViewDayCell.xib in Resources */,
 				061AFA1C1D54DFFE0023E35C /* CalendarYearViewDayCell.xib in Resources */,
+				064FD07B1D5C1A330048D72D /* CalendarMonthViewHeaderYearView.xib in Resources */,
 				064FD0791D5AD8A30048D72D /* CalendarTodosTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

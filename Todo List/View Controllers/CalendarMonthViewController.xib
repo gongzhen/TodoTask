@@ -19,6 +19,10 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ro0-CP-lCC">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="667" id="WFg-vE-uVZ"/>
+                        <constraint firstAttribute="width" constant="375" id="Wte-Qt-KqI"/>
+                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ASl-2l-XKE">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="50" height="50"/>
@@ -29,10 +33,8 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Ro0-CP-lCC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VcT-cO-ENT"/>
-                <constraint firstAttribute="trailing" secondItem="Ro0-CP-lCC" secondAttribute="trailing" id="YYl-aE-Xqg"/>
-                <constraint firstAttribute="bottom" secondItem="Ro0-CP-lCC" secondAttribute="bottom" id="goE-RC-7qs"/>
-                <constraint firstItem="Ro0-CP-lCC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xXY-en-lar"/>
+                <constraint firstItem="Ro0-CP-lCC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="31m-D6-Yd4"/>
+                <constraint firstItem="Ro0-CP-lCC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mDR-gS-Ml6"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>

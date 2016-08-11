@@ -41,8 +41,8 @@ class CalendarMonthViewController: UIViewController {
         let insetDistance: CGFloat = 10.0
         let itemWidth: CGFloat = (windowWidth - 2 * insetDistance) / itemsPerRow - itemSpacing
         let itemHeight: CGFloat = 60.0
-        flowLayout.sectionInset = UIEdgeInsets(top: insetDistance, left: 0, bottom: insetDistance, right: insetDistance)
-        flowLayout.itemSize = CGSizeMake(itemWidth, itemHeight) // 82 and 67
+        flowLayout.sectionInset = UIEdgeInsets(top: insetDistance, left: insetDistance, bottom: insetDistance, right: insetDistance)
+        flowLayout.itemSize = CGSizeMake(itemWidth, itemHeight) // 50 and 60
         flowLayout.minimumInteritemSpacing = itemSpacing
         flowLayout.minimumLineSpacing = 0
     }
@@ -51,22 +51,36 @@ class CalendarMonthViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         collectionView.collectionViewLayout.prepareLayout()
-        var offsetY: CGFloat = (collectionView.layoutAttributesForSupplementaryElementOfKind(UICollectionElementKindSectionHeader, atIndexPath: NSIndexPath(forItem: 0, inSection: selectedMonthIndex))?.frame.origin.y)!
+        
+        // collectionView ... frame.origin.y = (0, 0), (430, 0), (800, 0)
+        // collectionView ... frame.origin = JAN(0, 0), FEB (0, 430), WED(0, 800)
+        // collectionView ... frame = JAN: (0.0, 0.0, 375.0, 50.0)
+        // collectionView ... frame = FEB: (0.0, 430.0, 375.0, 50.0)
+        var offsetY: CGFloat = (collectionView.layoutAttributesForSupplementaryElementOfKind(
+            UICollectionElementKindSectionHeader,
+            atIndexPath: NSIndexPath(forItem: 0, inSection: selectedMonthIndex))?.frame.origin.y)!
+        // offsetY: -64..366..736
+        // selectedMonthIndex: 0, 1, 2, ... 11
         offsetY -= 64.0 // navigation bar height
+        // print("frame y: \(collectionView.layoutAttributesForSupplementaryElementOfKind( UICollectionElementKindSectionHeader,atIndexPath: NSIndexPath(forItem: 0, inSection: selectedMonthIndex))?.frame)!")
         collectionView.setContentOffset(CGPoint(x: collectionView.contentOffset.x, y: offsetY), animated: false)
+        
+        // UIInterfaceOrientationIsLandscape change the collectionView frame from 375 to 716.
+        // Modified the constraints in IB and force the width of frame is 375.
+        // @todo: rewrite the constraint programmatically.
     }
+    
+
 }
 
 extension CalendarMonthViewController: UICollectionViewDataSource {
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.CalendarMonthViewDayCellIdentifier, forIndexPath: indexPath) as! CalendarMonthViewDayCell
-        
         let month: Int = indexPath.section + 1
-        let firstDayOfMonth: NSDate = firstDayInMonth(month)
-        let firstWeekdayOfMonth: Int = weekdayForDate(firstDayOfMonth)
-        let lastDayOfMonth: Int = lastDayInMonthFromStartOfMonth(firstDayOfMonth)
-
+        let firstDayOfMonth: NSDate = firstDayInMonth(month)    // 2016 - MM - 01
+        let firstWeekdayOfMonth: Int = weekdayForDate(firstDayOfMonth)  // 5
+        let lastDayOfMonth: Int = lastDayInMonthFromStartOfMonth(firstDayOfMonth)   // 30
         if (indexPath.item < firstWeekdayOfMonth - 1 ||
             indexPath.item > lastDayOfMonth + firstWeekdayOfMonth - 2) {
             cell.hideDate()
@@ -74,7 +88,6 @@ extension CalendarMonthViewController: UICollectionViewDataSource {
         } else {
             cell.showDate()
             cell.dayLabel.text = "\(indexPath.item - firstWeekdayOfMonth + 2)"
-            
             let monthString = month < 10 ? "0\(month)" : "\(month)"
             let dayString = ((indexPath.item - firstWeekdayOfMonth + 2)) < 10 ? "0\((indexPath.item - firstWeekdayOfMonth + 2))" : "\((indexPath.item - firstWeekdayOfMonth + 2))"
             let key = monthString + dayString
@@ -115,10 +128,8 @@ extension CalendarMonthViewController: UICollectionViewDataSource {
 
 extension CalendarMonthViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CalendarMonthViewDayCell
         if cell.hasTodos == true {
-            print("true didselect: \(indexPath.item), \(indexPath.section), \(indexPath.row)")
             let calendarTodosTableViewController = CalendarTodosTableViewController()
             calendarTodosTableViewController.todoDict = self.todoDict
 
@@ -130,11 +141,8 @@ extension CalendarMonthViewController: UICollectionViewDelegate {
             let dayString = ((indexPath.item - firstWeekdayOfMonth + 2)) < 10 ? "0\((indexPath.item - firstWeekdayOfMonth + 2))" : "\((indexPath.item - firstWeekdayOfMonth + 2))"
             calendarTodosTableViewController.key = monthString + dayString
             let navigationController = UINavigationController(rootViewController: calendarTodosTableViewController)
-            // self.navigationController?.pushViewController(navigationController, animated: <#T##Bool#>)
             // http://stackoverflow.com/questions/27326183/presenting-a-view-controller-programmatically-in-swift
             self.presentViewController(navigationController, animated: true, completion: nil)
-        } else {
-            print("false didselect: \(indexPath.item), \(indexPath.section), \(indexPath.row)")
         }
     }
 }
@@ -168,6 +176,9 @@ extension CalendarMonthViewController {
         let components = calendar.components([.Year, .Month], fromDate: NSDate())
         components.month = month
         let weekRange = calendar.rangeOfUnit(.WeekOfMonth, inUnit: .Month, forDate: calendar.dateFromComponents(components)!)
+//        if month == 9 {
+//            return weekRange.length + 1
+//        }
         return weekRange.length
     }
 }

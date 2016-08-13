@@ -17,7 +17,7 @@
                BlueprintIdentifier = "061AF9371D4936FF0023E35C"
                BuildableName = "Todo List.app"
                BlueprintName = "Todo List"
-               ReferencedContainer = "container:Todo List.xcodeproj">
+               ReferencedContainer = "container:pocket secretary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "061AF94B1D4936FF0023E35C"
                BuildableName = "Todo ListTests.xctest"
                BlueprintName = "Todo ListTests"
-               ReferencedContainer = "container:Todo List.xcodeproj">
+               ReferencedContainer = "container:pocket secretary.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "061AF9561D4936FF0023E35C"
                BuildableName = "Todo ListUITests.xctest"
                BlueprintName = "Todo ListUITests"
-               ReferencedContainer = "container:Todo List.xcodeproj">
+               ReferencedContainer = "container:pocket secretary.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "061AF9371D4936FF0023E35C"
             BuildableName = "Todo List.app"
             BlueprintName = "Todo List"
-            ReferencedContainer = "container:Todo List.xcodeproj">
+            ReferencedContainer = "container:pocket secretary.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "061AF9371D4936FF0023E35C"
             BuildableName = "Todo List.app"
             BlueprintName = "Todo List"
-            ReferencedContainer = "container:Todo List.xcodeproj">
+            ReferencedContainer = "container:pocket secretary.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "061AF9371D4936FF0023E35C"
             BuildableName = "Todo List.app"
             BlueprintName = "Todo List"
-            ReferencedContainer = "container:Todo List.xcodeproj">
+            ReferencedContainer = "container:pocket secretary.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

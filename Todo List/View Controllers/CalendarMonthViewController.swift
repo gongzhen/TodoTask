@@ -17,6 +17,8 @@ class CalendarMonthViewController: UIViewController {
     
     private let calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
     
+    private var calendarYearViewMonthDataSource: CalendarYearViewMonthDataSource!
+    
     private let dateFormatter = NSDateFormatter()
     
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -47,6 +49,19 @@ class CalendarMonthViewController: UIViewController {
         flowLayout.minimumLineSpacing = 0
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //@todo re-initialize the todoDict.
+        self.calendarYearViewMonthDataSource = CalendarYearViewMonthDataSource()
+        self.calendarYearViewMonthDataSource.initTodos()
+        self.todoDict = self.calendarYearViewMonthDataSource.todoDict
+        // reload calendar to show todos.
+        // reloadData will cause reuse cell to keep the old background color.
+        // Fixed: setting selected property in custom cell.
+        // credit: http://stackoverflow.com/questions/32015774/collection-view-reloaddata-method-shows-a-cell-as-selected
+        self.collectionView.reloadData()
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -69,8 +84,6 @@ class CalendarMonthViewController: UIViewController {
         // Modified the constraints in IB and force the width of frame is 375.
         // @todo: rewrite the constraint programmatically.
     }
-    
-
 }
 
 extension CalendarMonthViewController: UICollectionViewDataSource {
@@ -91,8 +104,10 @@ extension CalendarMonthViewController: UICollectionViewDataSource {
             let monthString = month < 10 ? "0\(month)" : "\(month)"
             let dayString = ((indexPath.item - firstWeekdayOfMonth + 2)) < 10 ? "0\((indexPath.item - firstWeekdayOfMonth + 2))" : "\((indexPath.item - firstWeekdayOfMonth + 2))"
             let key = monthString + dayString
+            // mark todo on the date.
             if let _ = self.todoDict[key] {
                 cell.config(true, dotColor: UIColor.redColor())
+                cell.selected = true
             }
         }
         return cell
@@ -123,7 +138,6 @@ extension CalendarMonthViewController: UICollectionViewDataSource {
             assert(false, "Unexpected element kind")
         }
     }
-    
 }
 
 extension CalendarMonthViewController: UICollectionViewDelegate {
@@ -176,9 +190,6 @@ extension CalendarMonthViewController {
         let components = calendar.components([.Year, .Month], fromDate: NSDate())
         components.month = month
         let weekRange = calendar.rangeOfUnit(.WeekOfMonth, inUnit: .Month, forDate: calendar.dateFromComponents(components)!)
-//        if month == 9 {
-//            return weekRange.length + 1
-//        }
         return weekRange.length
     }
 }

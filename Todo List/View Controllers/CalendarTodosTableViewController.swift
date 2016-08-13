@@ -16,18 +16,26 @@ class CalendarTodosTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initTodos()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "TitlebarBG"), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
+        let leftButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CalendarTodosTableViewController.cancelCreating))
+        self.navigationItem.leftBarButtonItem = leftButton
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "uitableViewCellIdentifier")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        initTodos()
+    }
+    
+    func initTodos() {
         for (key, todos) in todoDict {
             if self.key == key {
                 self.todos = todos
             }
         }
-        let leftButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CalendarTodosTableViewController.cancelCreating))
-        self.navigationItem.leftBarButtonItem = leftButton
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "uitableViewCellIdentifier")
     }
     
     func cancelCreating() {

@@ -17,8 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="GzZ-Or-vuC">
+                                <rect key="frame" x="235" y="150" width="130" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="YJR-tG-j75"/>
+                                    <constraint firstAttribute="width" constant="130" id="pM2-fK-pNZ"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todo Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBr-mV-K8a">
-                                <rect key="frame" x="150" y="277" width="300" height="94"/>
+                                <rect key="frame" x="150" y="348" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="CEa-oZ-n8O"/>
                                 </constraints>
@@ -26,11 +33,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.97152019857053884" blue="0.99638070976010107" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99878213483075107" green="1" blue="0.89813543950551611" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="jBr-mV-K8a" firstAttribute="top" secondItem="GzZ-Or-vuC" secondAttribute="bottom" constant="73" id="BaB-jy-bfa"/>
                             <constraint firstItem="jBr-mV-K8a" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VT5-rb-E8a"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="jBr-mV-K8a" secondAttribute="bottom" constant="229" id="egb-Vf-Xvw"/>
-                            <constraint firstItem="jBr-mV-K8a" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="257" id="vBV-fa-vNa"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="jBr-mV-K8a" secondAttribute="bottom" constant="222" id="egb-Vf-Xvw"/>
+                            <constraint firstItem="GzZ-Or-vuC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rWl-jq-LAo"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,4 +47,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Launch" width="83" height="83"/>
+    </resources>
 </document>

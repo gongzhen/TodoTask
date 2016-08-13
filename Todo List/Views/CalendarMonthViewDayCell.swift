@@ -14,13 +14,22 @@ class CalendarMonthViewDayCell: UICollectionViewCell {
     @IBOutlet weak var dotView: UIView!
     var hasTodos:Bool?
     
+    override var selected : Bool {
+        didSet {
+            self.dayLabel.backgroundColor = (self.selected) ? UIColor.redColor() : nil
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+    }
+    
+    override func prepareForReuse() {
+        self.selected = false
     }
     
     func hideDate() {
@@ -39,7 +48,6 @@ class CalendarMonthViewDayCell: UICollectionViewCell {
     
     func config(hasTodos: Bool, dotColor:UIColor?){
         self.hasTodos = hasTodos
-        self.dotView.backgroundColor = dotColor
     }
     
 }

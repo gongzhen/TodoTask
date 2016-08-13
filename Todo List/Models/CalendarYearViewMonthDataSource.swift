@@ -37,8 +37,6 @@ class CalendarYearViewMonthDataSource: NSObject, UICollectionViewDataSource, UIC
                 }
             }
         }
-        // todoDict
-        // print(todoDict)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -65,9 +63,8 @@ class CalendarYearViewMonthDataSource: NSObject, UICollectionViewDataSource, UIC
                     NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleDouble.rawValue,
                     NSUnderlineColorAttributeName: UIColor.redColor()]
                 let underLineString = NSAttributedString(string: cell.label.text!, attributes: underLineAttributes)
-                // cell.label.attributedText = underLineString
+                cell.selected = true                
                 cell.config(underLineString)
-                // cell.backView.backgroundColor = UIColor.redColor()
             }            
         }
         return cell

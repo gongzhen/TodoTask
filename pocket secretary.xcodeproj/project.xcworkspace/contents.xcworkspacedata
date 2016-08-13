@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Todo List.xcodeproj">
+      location = "self:/Users/gongzhen/Projects/ios/raywenderlich/Todo List/pocket secretary.xcodeproj">
    </FileRef>
 </Workspace>

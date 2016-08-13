@@ -12,7 +12,14 @@ class CalendarYearViewDayCell: UICollectionViewCell {
 
     @IBOutlet var label: UILabel!
     @IBOutlet var backView:UIView!
-        
+    
+    override var selected : Bool {
+        didSet {
+            // self.layer.backgroundColor = (self.selected) ? UIColor.redColor().CGColor : UIColor.blueColor().CGColor
+            self.label.backgroundColor = (self.selected) ? UIColor.redColor() : nil
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,6 +33,4 @@ class CalendarYearViewDayCell: UICollectionViewCell {
     func config(text: NSAttributedString?) {
         self.label.attributedText = text
     }
-    
-    
 }
